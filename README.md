@@ -19,9 +19,11 @@ Note: This software cannot run in the tensorflow lastest version r1.11.0 since i
 Dowload pretrained model and extract it to your disc: [GoogleDrive](https://drive.google.com/file/d/1A3V7o3SKSiL3IHcTqc1jP4w58DuC8F9o/view)
 
 Run inference demo:
-`python tools/inference_crnn_ctc.py \
+```
+python tools/inference_crnn_ctc.py \
   --image_dir ./test_data/images/ --image_list ./test_data/image_list.txt \
-  --model_dir /path/to/your/bs_synth90k_model/`
+  --model_dir /path/to/your/bs_synth90k_model/
+```
 
 Result is:
 `Predict 1_AFTERSHAVE_1509.jpg image as: aftershave`
