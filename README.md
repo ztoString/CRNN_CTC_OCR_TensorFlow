@@ -25,14 +25,14 @@ Result is:
 `Predict 1_AFTERSHAVE_1509.jpg image as: aftershave`
 
 
-![](https://github.com/bai-shang/CRNN_CTC_Tensorflow/raw/master/test_data/images/1_AFTERSHAVE_1509.jpg?raw=true)
+![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/raw/master/test_data/images/1_AFTERSHAVE_1509.jpg?raw=true)
 
 
 `Predict 2_LARIAT_43420.jpg image as: lariat`
 
 
 
-![](https://github.com/bai-shang/CRNN_CTC_Tensorflow/raw/master/test_data/images/2_LARIAT_43420.jpg?raw=true)
+![](https://github.com//ztoString/CRNN_CTC_OCR_TensorFlow/raw/master/test_data/images/2_LARIAT_43420.jpg?raw=true)
 ## Train a new model
 ### Data Preparation
 * Firstly you need to download [Synth90k](http://www.robots.ox.ac.uk/~vgg/data/text/) dataset and extract it into a folder.
@@ -45,15 +45,21 @@ For example: image_list.txt
 
 * Then you are suppose to convert your dataset into tensorflow records which can be done by
 
-`python tools/create_crnn_ctc_tfrecord.py \
+```
+python tools/create_crnn_ctc_tfrecord.py \
   --image_dir path/to/90kDICT32px/ --anno_file path/to/image_list.txt --data_dir ./tfrecords/ \
-  --validation_split_fraction 0.1`
+  --validation_split_fraction 0
+```
   
 Note: make sure that images can be read from the path you specificed, such as:
 
-`path/to/90kDICT32px/1/2/373_coley_14845.jpg
+```
+
+path/to/90kDICT32px/1/2/373_coley_14845.jpg
 path/to/90kDICT32px/17/5/176_Nevadans_51437.jpg
-.......`
+.......
+
+```
 
 All training image will be scaled into height 32 and write to tfrecord file.
 The dataset will be divided into train and validation set and you can change the parameter to control the ratio of them.
@@ -67,15 +73,15 @@ you can also use the *dowload_synth90k_and_create_tfrecord.sh* script automatica
 
 After several times of iteration you can check the output in terminal as follow:
 
-![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/tree/master/data/20190417.png)
+![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/raw/master/data/20190417.png)
 
 During my experiment the loss drops as follow: 
 
-![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/tree/master/data/CTC_LOSS.png)
+![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/raw/master/data/CTC_LOSS.png)
 
 And the learning rate drops as follow:
 
-![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/tree/master/data/Learning_rate.png)
+![](https://github.com/ztoString/CRNN_CTC_OCR_TensorFlow/raw/master/data/Learning_rate.png)
 
 ## Evaluate model
 
