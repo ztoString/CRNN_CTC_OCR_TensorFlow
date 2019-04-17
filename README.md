@@ -40,8 +40,10 @@ Result is:
 
 For example: image_list.txt
 
-`90kDICT32px/1/2/373_coley_14845.jpg coley
-90kDICT32px/17/5/176_Nevadans_51437.jpg nevadans`
+```
+90kDICT32px/1/2/373_coley_14845.jpg coley
+90kDICT32px/17/5/176_Nevadans_51437.jpg nevadans
+```
 
 * Then you are suppose to convert your dataset into tensorflow records which can be done by
 
@@ -54,11 +56,9 @@ python tools/create_crnn_ctc_tfrecord.py \
 Note: make sure that images can be read from the path you specificed, such as:
 
 ```
-
 path/to/90kDICT32px/1/2/373_coley_14845.jpg
 path/to/90kDICT32px/17/5/176_Nevadans_51437.jpg
 .......
-
 ```
 
 All training image will be scaled into height 32 and write to tfrecord file.
